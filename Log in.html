@@ -2,7 +2,7 @@
 <html lang="et"> <!-- Mis keeles dokument on -->
 <head>
     <meta charset="UTF-8">
-    <title>Tiim</title> <!-- Veebilehe pealkiri, mida näidatakse brauseri tab-is -->
+    <title>Log in</title> <!-- Veebilehe pealkiri, mida näidatakse brauseri tab-is -->
     <link rel="stylesheet" type="text/css" href="main.css"/> <!-- Ühendus üldise css ja meie lehe vahel -->
     <link rel="stylesheet" type="text/css" href="stylesheets/team.css"/>
     <!-- Ühendus lehekülje css ja meie lehe vahel -->
@@ -14,14 +14,10 @@
 <div id="navbar">
     <ul>
         <li><a class="nav-bar" href="index.html"> Avaleht </a></li>
-        <li style="float: right"><a class="nav-bar" href="team.html"> Tiim </a></li>
+        <li style="float: right"><a class="nav-bar" href="Log%20in.html"> Log in </a></li>
         <li style="float: right"><a class="nav-bar" href="nelijarve.html"> Nelijärve bingo </a></li>
     </ul>
 </div>
-
-<!-- Tiimi nimi -->
-
-<h1 style="align-self: flex-start; color: white;"> Korduma kippuvad küsimused</h1>
 
 <!-- Tiimiliikmete kaardid -->
 
@@ -31,58 +27,9 @@
 
     <div class="card">
 
-        <img src="images/kolia%20picture.png">
-        <h1 style="align-self: flex-start"> Kolia </h1> <!-- Tiimiliikme kasutajanimi discordis -->
-        <p style="align-self: flex-start"> Projektijuht ja programmeerija</p> <!-- Mida tiimiliige töötoas tegi -->
 
-        <div class="overlay"> <!-- Kui klikkida tiimiliikme kaardi peale, siis tuleb ette järgnev overlay -->
+        <p style="align-self: "> Username</p> <!-- Mida tiimiliige töötoas tegi -->
 
-            <div class="overlay-content">
-                <img class="close-icon" src="images/close.png"/> <!-- Pilt, mille vajutamisega läheb vaade kinni -->
-                <div class="pictures-and-text">
-                    <div class="teammates-picture">
-                        <img src="images/kolia%20picture.png"> <!-- Pilt tiimiliikmest -->
-                    </div>
-                    <div>
-                        <h1> Kolia</h1> <!-- Tiimiliikme ees- ja perekonnanimi -->
-                        <p> Olen gambling addiction'i anonüümses rühmas </p> <!-- tiimiliikme rühm -->
-                        <p class="fact true"> Lemmikvärv on roheline</p> <!-- Tõene fakt tiimiliikme kohta -->
-                        <p class="fact false"> Olen country bändis mänginud kitarri</p> <!-- Väär fakt tiimiliikme kohta -->
-                        <p class="fact true"> Olen praegu mentor noorsooprojektis seotud oma lauamängu loomisega
-</p> <!-- Tõene fakt tiimiliikme kohta -->
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="card">
-        <img src="images/img_1.png"> <!-- Tiimiliikme discordi pilt -->
-        <h1 style="align-self: flex-start"> Kata</h1> <!-- Tiimiliikme kasutajanimi discordis -->
-        <p style="align-self: flex-start"> Kõrvalistuja</p> <!-- Mida tiimiliige töötoas tegi -->
-
-        <div class="overlay"> <!-- Kui klikkida tiimiliikme kaardi peale, siis tuleb ette järgnev overlay -->
-
-            <div class="overlay-content">
-                <img class="close-icon" src="images/close.png"/> <!-- Pilt, mille vajutamisega läheb vaade kinni -->
-                <div class="pictures-and-text">
-                    <div class="teammates-picture">
-                        <img src="images/img_1.png"> <!-- Pilt tiimiliikmest -->
-                    </div>
-                    <div>
-                        <h1> Kata</h1> <!-- Tiimiliikme ees- ja perekonnanimi -->
-                        <p> Olen gambling addiction'i anonüümses rühmas </p> <!-- tiimiliikme rühm -->
-                        <p class="fact false"> Vanasti kasvatasin tomateid</p> <!-- Tõene fakt tiimiliikme kohta -->
-                        <p class="fact true"> Tegin värvimuutvajooki, mis peaaegu müüs</p> <!-- Väär fakt tiimiliikme kohta -->
-                        <p class="fact true"> Professionaalselt kiigesportlane</p> <!-- Tõene fakt tiimiliikme kohta -->
-                    </div>
-                </div>
-            </div>
-
-        </div>
     </div>
 </div>
 <div class="container">
@@ -112,20 +59,6 @@
             });
         }
     });
-
-    // Faktide punaseks ja roheliseks värvimine
-
-    const facts = document.querySelectorAll('.fact');
-    facts.forEach(function (fact) {
-        fact.addEventListener('click', function () {
-            // kui elemendi klassi järel on fact true, siis teeb roheliseks, kui false, siis punaseks
-            if (fact.classList.contains('true')) {
-                fact.style.color = "green";
-            } else if (fact.classList.contains('false')) {
-                fact.style.color = "red";
-            }
-        })
-    })
 
 </script>
 </body>
