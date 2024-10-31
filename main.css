@@ -1,0 +1,99 @@
+/* viide elemendile st muudame kõiki selliseid elemente */
+body {
+    display: flex; /* flex aitab meil teha dünaamilisemat lehekülge */
+    padding: 0.5vw; /* vw ehk viewport width tähendab, et võetakse nii mitu protsenti, olenedes, kui lai on ekraan */
+    flex-direction: column; /* Mis suunas elemendid, mida HTML koodi kirjutama, lähevad. Praegu lähevad teineteise alla*/
+    gap: 0.5vw; /* Vahe elementide vahel */
+    align-items: center; /* Elemendid joondatakse horisontaalselt lehe keskele*/
+    background-image: url("data:image/jpeg;base64,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");
+    /* . viitame elemenditele, millel on selline class HTML-is on class="container" */
+}
+.container {
+    display: flex;
+    padding: 1vw;
+    align-items: center;
+    gap: 3vw;
+    justify-content: center; /* Joondame vertikaalselt keskele */
+}
+.container img {
+    width: 100%;
+    height: 60%;
+}
+.slotcontainer {
+    background-image: url("images/slot.png");
+    background-size: cover; /* This makes sure the image covers the whole container */
+    background-position: center; /* This centers the image */
+    background-repeat: no-repeat; /* This prevents the image from repeating */
+    width: 135%; /* Set the container's width */
+    height: 100vh; /* Set the container's height, vh is viewport height */
+    position: relative;
+    display: flex;
+    padding: 1vw;
+    align-items: center;
+    gap: 3vw;
+    justify-content: center;
+}
+
+
+
+.icon {
+    max-width: 30vw; /* Mis võib olla elemendi maksimaalne laius. Automaatselt pannakse selle järgi elemendi kõrgus*/
+}
+
+iframe {
+    width: 50vw; /* Andakse elemendile kindel laius*/
+    height: 28vw; /* Andakse elemendile kindel pikkus */
+}
+
+button {
+    width: 20vw;
+    border: none; /* Nupul pole äärt */
+    background-color: #850000; /* Nupu tausta värv */
+    padding: 2vw; /* Vaba ruum nupu teksti ümber */
+}
+
+/* Kui hiirega nupu peale minnakse, siis muudab see värvi */
+button:hover {
+    background-color: #e08831;
+    cursor: pointer; /* Kursos muudatus */
+}
+
+li {
+    float: left;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #c99a00;
+}
+
+li a {
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 1vw 2vw;
+    text-decoration: overline underline;
+}
+
+li a:hover {
+    background-color: #4f4747;
+    cursor: pointer;
+}
+
+#navbar {
+    align-self: flex-start; /* Element joondub vasakule */
+    width: 100%;
+}
+
+.card {
+    width: 20vw;
+    height: 25vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #dab81c;
+    padding: 0vw 1.5vw 1.5vw;
+}
