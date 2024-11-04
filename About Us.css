@@ -1,0 +1,57 @@
+ html{
+    width:auto;
+    height: 100%;
+    min-height: 100%;
+}
+
+@font-face{
+    font-family: RoladeItalic-Black;
+    src: url(RoladeItalic-Black.ttf);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.texts {
+    margin-right: 40px;
+
+}
+img {
+    max-width: auto;
+    height: 50vw;
+    margin-bottom: 50px;
+}
+
+main{
+    background-color:#FFDC25;
+    min-height: 100vh;
+}
+
+.p1{
+    font-size: 54px;
+    color: white;
+    font-family: RoladeItalic-Black;
+    border:1px transparent;
+    border-radius: 70px;
+    background-color: #EA4135;
+    padding: 25px;
+    display: inline-block;
+    margin-left: 100px;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+.p2{
+    font-size: 72px;
+    font-family: RoladeItalic-Black;
+    border:1px transparent;
+    border-radius: 30px;
+    background-color: white;
+    margin-bottom: 100px;
+    padding: 15px;
+    margin-left: 40px;
+    color:#2675FF;
+    padding: 40px;
+}
