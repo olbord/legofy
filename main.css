@@ -34,8 +34,6 @@ body {
     justify-content: center;
 }
 
-
-
 .icon {
     max-width: 30vw; /* Mis võib olla elemendi maksimaalne laius. Automaatselt pannakse selle järgi elemendi kõrgus*/
 }
@@ -88,18 +86,44 @@ li a:hover {
     width: 100%;
 }
 
-.card {
-    width: 20vw;
-    height: 25vw;
+.log_in_card {
+    width: 25vw;
+    height: 27vw;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: #dab81c;
+    align-items: initial;
+    background-color: #EA4135;
     padding: 0vw 1.5vw 1.5vw;
+    border-radius: 10px;
+    color: #F5F5F5;
 }
 
 .signin {
-    height: 1cm;
+    width: 300px;
+    height: 10px;
     background-color: #2675FF;
-    border-radius: 5px;
+    border-radius: 20px;
+    color: #F5F5F5;
+}
+
+textarea {
+    height: 35px;
+    width: 300px;
+    border-radius: 15px;
+    border: none;
+    margin-bottom: 15px;
+    background-color: #F5F5F5;
+    margin-top: 5px;
+    outline: none;
+    text-align: left;
+    line-height: 2.5;
+    resize: none;
+}
+
+.username_label {
+    margin-top: 40px;
+}
+
+.registerlink {
+    color: #F5F5F5;
 }
