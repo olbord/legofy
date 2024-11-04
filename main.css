@@ -1,5 +1,6 @@
 /* viide elemendile st muudame kõiki selliseid elemente */
 body {
+    font-family: 'tavatekst', sans-serif;
     display: flex; /* flex aitab meil teha dünaamilisemat lehekülge */
     padding: 0.5vw; /* vw ehk viewport width tähendab, et võetakse nii mitu protsenti, olenedes, kui lai on ekraan */
     flex-direction: column; /* Mis suunas elemendid, mida HTML koodi kirjutama, lähevad. Praegu lähevad teineteise alla*/
@@ -11,27 +12,13 @@ body {
 .container {
     display: flex;
     padding: 1vw;
-    align-items: center;
-    gap: 3vw;
-    justify-content: center; /* Joondame vertikaalselt keskele */
+    align-items: start;
+    gap: 1vw;
+    justify-content: flex-start; /* Joondame vertikaalselt keskele */
 }
 .container img {
     width: 100%;
     height: 60%;
-}
-.slotcontainer {
-    background-image: url("images/slot.png");
-    background-size: cover; /* This makes sure the image covers the whole container */
-    background-position: center; /* This centers the image */
-    background-repeat: no-repeat; /* This prevents the image from repeating */
-    width: 135%; /* Set the container's width */
-    height: 100vh; /* Set the container's height, vh is viewport height */
-    position: relative;
-    display: flex;
-    padding: 1vw;
-    align-items: center;
-    gap: 3vw;
-    justify-content: center;
 }
 
 .icon {
@@ -46,13 +33,13 @@ iframe {
 button {
     width: 20vw;
     border: none; /* Nupul pole äärt */
-    background-color: #850000; /* Nupu tausta värv */
+    background-color: #EA4135; /* Nupu tausta värv */
     padding: 2vw; /* Vaba ruum nupu teksti ümber */
 }
 
 /* Kui hiirega nupu peale minnakse, siis muudab see värvi */
 button:hover {
-    background-color: #e08831;
+    background-color: #872720;
     cursor: pointer; /* Kursos muudatus */
 }
 
@@ -65,7 +52,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #c99a00;
+    background-color: #2675FF;
 }
 
 li a {
@@ -126,4 +113,32 @@ textarea {
 
 .registerlink {
     color: #F5F5F5;
+}
+
+@font-face {
+    font-family: 'pealkirjad';
+    src: url('fonts/pealkirjad/RoladeItalic-Black.woff2') format('woff2'), /* Modern browsers */
+         url('fonts/pealkirjad/RoladeItalic-Black.woff') format('woff'),   /* Fallback for older browsers */
+         url('fonts/pealkirjad/RoladeItalic-Black.ttf') format('truetype'); /* Optional, for older browsers */
+    font-weight: normal;  /* Or specify weight if there are multiple versions */
+    font-style: normal;   /* Specify style if italic versions are available */
+}
+
+@font-face {
+    font-family: 'tavatekst';
+    src: url('fonts/tavatekst/RoladeItalic-Bold.woff2') format('woff2'), /* Modern browsers */
+         url('fonts/tavatekst/RoladeItalic-Bold.woff') format('woff'),   /* Fallback for older browsers */
+         url('fonts/tavatekst/RoladeItalic-Bold.ttf') format('truetype'); /* Optional, for older browsers */
+    font-weight: normal;  /* Or specify weight if there are multiple versions */
+    font-style: normal;   /* Specify style if italic versions are available */
+}
+
+.create {
+    margin-top: 5px;
+}
+
+.signin {
+    height: 1cm;
+    background-color: #2675FF;
+    border-radius: 5px;
 }
