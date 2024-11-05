@@ -1,0 +1,34 @@
+
+    </div>
+</div>
+<div class="container">
+
+</div>
+<script>
+    // Lehe funktsionaalsuse lisamiseks lisame sellise javascripti koodi.
+
+    // Tiimiliikme kaardile klikkimisel avaneb uus vaade
+
+    const cards = document.querySelectorAll('.card'); // kogume kokku kõik elemendid, mille klass on card
+
+    // iga kaardi kohta lisame funktsionaalsuse
+    cards.forEach(function (card) {
+
+        // kui vajutame kaardile, siis näitame uut vaadet
+        card.addEventListener('click', function () {
+            card.classList.add('active');
+        });
+
+        // Uue vaate kinni panemise funktsionaalsus
+        const closeButton = card.querySelector('.close-icon');
+        if (closeButton) {
+            closeButton.addEventListener('click', function (event) {
+                event.stopPropagation();
+                card.classList.remove('active');
+            });
+        }
+    });
+
+</script>
+</body>
+</html>
