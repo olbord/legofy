@@ -1,3 +1,25 @@
 img {
     transform: scale(0.7); /* Scales image down to 50% of its original size */
 }
+
+#create {
+    transition: transform 0.3s ease;
+}
+
+/* Animation for the button */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Show button when animation is triggered */
+#create.animate {
+  animation: bounce 1s;
+}
