@@ -86,16 +86,19 @@ li a:hover {
 }
 
 .signin {
-    width: 300px;
-    height: 10px;
+    width: 25vw;
+    height: 3vw;
+    line-height: 5px;
     background-color: #2675FF;
-    border-radius: 20px;
+    border-radius: 5px;
     color: #F5F5F5;
+    font-family: 'tavatekst', sans-serif;
+    font-size: 15px;
 }
 
 textarea {
-    height: 35px;
-    width: 300px;
+    height: 3vw;
+    width: 25vw;
     border-radius: 15px;
     border: none;
     margin-bottom: 15px;
@@ -134,13 +137,7 @@ textarea {
 }
 
 .create {
-    margin-top: 5px;
-}
-
-.signin {
-    height: 1cm;
-    background-color: #2675FF;
-    border-radius: 5px;
+    margin-bottom: 8vw;
 }
 
 img {
