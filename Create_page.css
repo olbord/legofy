@@ -1,0 +1,66 @@
+html{
+    width:auto;
+    height: 100%;
+    min-height: 100%;
+}
+
+@font-face{
+    font-family: RoladeItalic-Black;
+    src: url(fonts/pealkirjad/RoladeItalic-Black.ttf);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+main{
+    background-color:#FFDC25;
+    min-height: 100vh;
+}
+
+img {
+    margin-top:300px;
+    cursor: pointer;
+}
+
+img.has-border {
+    width: 528px;
+    height: 512px;
+    border-radius: 70px;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+.p1{
+    font-size: 72px;
+    color: white;
+    font-family: RoladeItalic-Black;
+    border:1px transparent;
+    border-radius: 70px;
+    background-color: #EA4135;
+    padding: 25px;
+    display: inline-block;
+    padding-left: 70px;
+    padding-right: 70px;
+    margin-top:150px;
+}
+
+.p1:hover{
+    font-size: 72px;
+    color: white;
+    font-family: RoladeItalic-Black;
+    border:1px transparent;
+    border-radius: 70px;
+    background-color: #942c25;
+    padding: 25px;
+    display: inline-block;
+    padding-left: 70px;
+    padding-right: 70px;
+    margin-top:150px;
+}
+
+img:hover{
+    filter: brightness(0.7);
+}
