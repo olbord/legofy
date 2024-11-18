@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="Create_page.css">
+    <title>Create page</title>
+</head>
+<body>
+
+<main>
+    <div class="container">
+        <div>
+            <img src="images/Group13.png" id="preview-img" alt="Image" style="cursor: pointer;">
+            <input type="file" id="file-upload" style="display: none;" accept="image/*">
+        </div>
+        <div class="texts">
+            <button class="p1" id="create-btn">CREATE</button>
+        </div>
+    </div>
+</main>
+
+<script>
+const fileInput = document.getElementById('file-upload');
+const previewImg = document.getElementById('preview-img');
+const createButton = document.getElementById('create-btn');
+
+previewImg.addEventListener('click', () => {
+    fileInput.click();
+});
+
+fileInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    if (file) {
+        if (file.type.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                previewImg.src = e.target.result;
+
+                previewImg.classList.add('has-border');
+            };
+            reader.readAsDataURL(file);
+        } else {
+            alert('Please select an image file.');
+        }
+    }
+});
+
+createButton.addEventListener('click', () => {
+    window.location.href = 'nextpage.html'; // Pean maarama URL lehe
+});
+</script>
+
+</body>
+</html>
