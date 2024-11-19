@@ -40,6 +40,7 @@
 .container {
     display: flex;
     align-items: center;
+    font-size: 7vw;
 }
 
 .texts {
@@ -47,7 +48,7 @@
     font-family: 'tavatekst', sans-serif;
 }
 img {
-    max-width: auto;
+    max-width: 70%;
     height: 50vw;
     margin-bottom: 50px;
 }
