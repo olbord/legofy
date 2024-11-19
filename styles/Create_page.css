@@ -6,7 +6,7 @@ html{
 
 @font-face{
     font-family: RoladeItalic-Black;
-    src: url(fonts/pealkirjad/RoladeItalic-Black.ttf);
+    src: url(../fonts/pealkirjad/RoladeItalic-Black.ttf);
 }
 
 .container {

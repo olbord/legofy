@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">    <!-- Tähestik, mida kasutame  -->
-    <link rel="stylesheet" type="text/css" href="main.css"/> <!-- Ühendus üldise css ja meie lehe vahel -->
+    <link rel="stylesheet" type="text/css" href="../styles/main.css"/> <!-- Ühendus üldise css ja meie lehe vahel -->
     <link rel="stylesheet" type="text/css" href="index.css"> <!-- Ühendus lehekülje css ja meie lehe vahel -->
     <title>Main</title> <!-- Veebilehe pealkiri, mida näidatakse brauseri tab-is -->
 </head>
@@ -14,7 +14,7 @@
 <div id="navbar">
     <ul>
         <li><a class="nav-bar" href="index.html"> Home </a></li>
-        <li style="float: right"><a class="nav-bar" href="Log%20in.html"> Log in </a></li>
+        <li style="float: right"><a class="nav-bar" href="login.html"> Log in </a></li>
         <li style="float: right"><a class="nav-bar" href="My%20Collection.html"> My Collection </a></li>
         <li style="float: right"><a class="nav-bar" href="About%20Us.html"> About Us </a></li>
     </ul>
@@ -24,15 +24,17 @@
 <div class="container" style="">
     <div id="textBox">
         <h1 style="color: #2675ff;font-family: 'pealkirjad', sans-serif;">Welcome to...</h1>
-        <img src="images/legofy logo.png" alt="logo">
+        <img src="../images/legofy%20logo.png" alt="logo">
     </div>
 
 </div>
 
 
 <div id="root"></div>
-<button id="create-button"
-        style="color: yellow;font-family: 'pealkirjad', sans-serif;font-size: large">CREATE NOW</button>
+    <button id="create-button"
+        style="color: yellow;font-family: 'pealkirjad', sans-serif;font-size: large">CREATE NOW
+    </button>
+    <script src="../scripts/create_button.js"></script>
 
 </body>
 
