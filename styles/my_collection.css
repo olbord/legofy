@@ -1,0 +1,62 @@
+body {
+    font-family: 'tavatekst', sans-serif;
+    display: flex; /* flex aitab meil teha dünaamilisemat lehekülge */
+    padding: 0.5vw; /* vw ehk viewport width tähendab, et võetakse nii mitu protsenti, olenedes, kui lai on ekraan */
+    flex-direction: column; /* Mis suunas elemendid, mida HTML koodi kirjutama, lähevad. Praegu lähevad teineteise alla*/
+    gap: 0.5vw; /* Vahe elementide vahel */
+    align-items: center; /* Elemendid joondatakse horisontaalselt lehe keskele*/
+    background-color: #FFDC25;
+}
+
+li {
+    float: left;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2675FF;
+}
+
+li a {
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 1vw 2vw;
+    text-decoration: overline underline;
+}
+
+li a:hover {
+    background-color: #4f4747;
+    cursor: pointer;
+}
+
+#navbar {
+    align-self: flex-start; /* Element joondub vasakule */
+    width: 100%;
+}
+
+@font-face {
+    font-family: 'pealkirjad';
+    src: url('../fonts/pealkirjad/RoladeItalic-Black.woff2') format('woff2'), /* Modern browsers */
+         url('../fonts/pealkirjad/RoladeItalic-Black.woff') format('woff'),   /* Fallback for older browsers */
+         url('../fonts/pealkirjad/RoladeItalic-Black.ttf') format('truetype'); /* Optional, for older browsers */
+    font-weight: normal;  /* Or specify weight if there are multiple versions */
+    font-style: normal;   /* Specify style if italic versions are available */
+}
+
+@font-face {
+    font-family: 'tavatekst';
+    src: url('../fonts/tavatekst/RoladeItalic-Bold.woff2') format('woff2'), /* Modern browsers */
+         url('../fonts/tavatekst/RoladeItalic-Bold.woff') format('woff'),   /* Fallback for older browsers */
+         url('../fonts/tavatekst/RoladeItalic-Bold.ttf') format('truetype'); /* Optional, for older browsers */
+    font-weight: normal;  /* Or specify weight if there are multiple versions */
+    font-style: normal;   /* Specify style if italic versions are available */
+}
+
+title {
+    font-family: 'pealkirjad', sans-serif;
+
+}
