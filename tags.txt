@@ -1,0 +1,313 @@
+Hair
+Female
+
+blackMedium.png
+FemaleBlack
+Medium
+Updo
+
+blackSort.png
+Female
+Black
+Short
+Loose
+
+blondeLong.png
+Female
+Blonde
+Long
+Updo
+
+blondeShort.png
+Female
+Blonde
+Short
+Loose
+
+brownBun.png
+Female
+Brown
+Short
+Updo
+
+brownLong.png
+Female
+Brown
+Short
+Loose
+
+Hair
+Male
+
+blackWavy.png
+Male
+Short
+Black
+Wavy
+
+blondeShort.png
+Male
+Short
+Blonde
+Slicked Back
+
+brownSpiky.png
+Male
+Short
+Brown
+Spiky
+
+brownStraight.png
+Male
+Short
+Brown
+Straight
+
+brownStyled.png
+Male
+Short
+Brown
+Slicked Back
+
+brownWavy.png
+Male
+Short
+Brown
+Wavy
+
+Faces
+
+1face.png
+Female
+Adult
+Brown lipstick
+Smirk
+Lashes
+
+2face.png
+Male
+Adult
+Smile
+Sunglasses
+Closed mouth
+
+3face.png
+Female
+Young
+Freckles
+Smile
+Lashes
+
+4face.png
+Female
+Adult
+Brown lipstick
+Smirk
+Sunglasses
+
+5face.png
+Male
+Old
+Smile
+Beard
+Wrinkles
+
+6face.png
+Male
+Adult
+Thoughtful
+Closed mouth
+Serious
+
+7face.png
+Female
+Adult
+Beige lipstick
+Simper
+Lashes
+
+8face.png
+Male
+Adult
+Angry
+Open eyes
+Open mouth
+
+9face.png
+Female
+Adult
+Beige lipstick
+Neutral
+Lashes
+
+10face.png
+Male
+Adult
+Smile
+Brown bread
+Open mouth
+
+11face.png
+Male
+Young
+Freckles
+Smile
+Open mouth
+
+12face.png
+Male
+Young
+Freckles
+Smile
+Open mouth
+
+Shirts
+
+beigeHawaii.png
+Beige shirt
+Buttoned
+Long sleeve
+Hawaii print
+Purple t-shirt
+
+blueSuit.png
+Blue blazer
+Buttoned
+Long sleeve
+White shirt
+Red tie
+
+blueSweater.png
+Blue sweatshirt
+Long sleeve
+Round neck
+Inscription
+
+brownJacket.png
+Brown jacket
+Unbuttoned
+Long sleeve
+Buttons
+Blue shirt
+
+brownSweater.png
+Brown sweater
+Long sleeve
+Diamond print
+White shirt
+Buttoned
+
+greenCasual.png
+Green jacket
+Unbuttoned
+Long sleeve
+White-red shirt
+Chain
+
+greenCozy.png
+Green sweater
+V-neck
+Long sleeve
+Light blue shirt
+Buttoned
+
+greyCasual.png
+Grey zipper
+Unbuttoned
+Long sleeve
+Pockets
+Maroon t-shirt
+
+lightGreen.png
+Light green shirt
+Unbuttoned
+Long sleeve
+Pockets
+White t-shirt
+
+redBoy.png
+Red shirt
+Buttoned
+Long sleeve
+Checkered print
+Silver buttons
+
+redGirl.png
+Red cardigan
+Long sleeve
+Bow
+White t-shirt
+Chain
+
+whiteColorful.png
+White sweatshirt
+Long sleeve
+Pink sleeve
+Yellow sleeve
+Tie dye print
+
+Pants
+
+1pants.png
+White pants
+Blue inserts
+White shoes
+
+2pants.png
+Skirt
+Black
+Long
+
+3pants.png
+Black pants
+Black shoe
+Prothesis
+
+4pants.png
+Black pants
+Green inserts
+Pockets
+Black shoes
+
+5pants.png
+Light blue pants
+Pockets
+Light blue shoes
+
+6pants.png
+Blue pants
+Red shoes
+
+7pants.png
+White pants
+Blue seam
+Pockets
+White shoes
+
+8pants.png
+Beige pants
+Brown belt
+Dark brown belt
+Beige shoes
+
+9pants.png
+Red pants
+Red belt
+Red shoes
+
+10pants.png
+Beige pants
+Blue top
+Print on knees
+White shoes
+
+11pants.png
+Yellow pants
+Purple top
+Purple belt
+Yellow shoes
+
+12pants.png
+Skirt
+White
+Long

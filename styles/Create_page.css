@@ -5,8 +5,12 @@ html{
 }
 
 @font-face{
-    font-family: RoladeItalic-Black;
-    src: url(../fonts/pealkirjad/RoladeItalic-Black.ttf);
+    font-family: 'pealkirjad';
+    src: url('../fonts/pealkirjad/RoladeItalic-Black.woff2') format('woff2'), /* Modern browsers */
+         url('../fonts/pealkirjad/RoladeItalic-Black.woff') format('woff'),   /* Fallback for older browsers */
+         url('../fonts/pealkirjad/RoladeItalic-Black.ttf') format('truetype'); /* Optional, for older browsers */
+    font-weight: normal;  /* Or specify weight if there are multiple versions */
+    font-style: normal;   /* Specify style if italic versions are available */
 }
 
 .container {
@@ -36,7 +40,7 @@ img.has-border {
 .p1{
     font-size: 72px;
     color: white;
-    font-family: RoladeItalic-Black;
+    font-family: 'pealkirjad', sans-serif;
     border:1px transparent;
     border-radius: 70px;
     background-color: #EA4135;
@@ -50,7 +54,7 @@ img.has-border {
 .p1:hover{
     font-size: 72px;
     color: white;
-    font-family: RoladeItalic-Black;
+    font-family: 'pealkirjad', sans-serif;
     border:1px transparent;
     border-radius: 70px;
     background-color: #942c25;
