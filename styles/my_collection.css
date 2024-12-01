@@ -56,7 +56,34 @@ li a:hover {
     font-style: normal;   /* Specify style if italic versions are available */
 }
 
-title {
+#title_collection {
     font-family: 'pealkirjad', sans-serif;
+    font-size: 3vw;
+    color: #EA4135;
+    align-self: start;
+    margin-left: 4vw;
+}
 
+.card {
+    border-radius: 20px;
+    background-color: #F5F5F5;
+    width: 20vw;
+    height: 25vw;
+    place-content: center;
+    align-content: center;
+    align-self: start;
+    margin: 2vw;
+    text-align: center;
+}
+
+img {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 3vw;
 }
