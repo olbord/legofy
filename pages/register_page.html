@@ -10,7 +10,8 @@
 <div id="navbar">
     <ul>
         <li><a class="nav-bar" href="index.html"> Home </a></li>
-        <li style="float: right"><a class="nav-bar" href="Log%20in.html"> Log in </a></li>
+        <li id="signout_button" style="float: right; display: none"><a class="nav-bar"> Log out </a></li>
+        <li id="signin_link" style="float: right"><a class="nav-bar" href="Log%20in.html"> Log in </a></li>
         <li style="float: right"><a class="nav-bar" href="my_collection.html"> My Collection </a></li>
         <li style="float: right"><a class="nav-bar" href="About%20Us.html"> About Us </a></li>
     </ul>
@@ -18,19 +19,22 @@
 
 <div class="container">
 
-    <div class="register_card">
-        <label class="username_label"> Username
-            <textarea name="username_textarea"> </textarea>
+    <div class="log_in_card">
+        <h1 id="feedback" style="display: none"></h1>
+        <label class="username_label"> Email
+            <input id='username_textarea'> </input>
         </label>
-        <label> Password
-            <textarea name="password_textarea"> </textarea>
+        <label class="password_label"> Password
+            <input id="password_textarea" type="password"> </input>
         </label>
-        <label> Repeat your password
-            <textarea name="password_textarea"> </textarea>
+        <label class="password_label"> Repeat the password
+            <input id="password_repeat" type="password"> </input>
         </label>
-        <button class="signin"> Register</button>
+        <button id="signup" class="signup"> Register</button>
     </div>
 </div>
-
+<script type="module" src="/scripts/signin.js"></script>
+<script type="module" src='/scripts/signup.js'></script>
+<script type="module" src="/scripts/signout.js"></script>
 </body>
 </html>

@@ -32,6 +32,7 @@ iframe {
 
 button {
     width: 20vw;
+    font-family: 'tavatekst', sans-serif;
     border: none; /* Nupul pole äärt */
     background-color: #EA4135; /* Nupu tausta värv */
     padding: 2vw; /* Vaba ruum nupu teksti ümber */
@@ -74,16 +75,17 @@ li a:hover {
 }
 
 .log_in_card {
-    width: 25vw;
-    height: 27vw;
+    width: 25vw; /* Responsive width based on viewport width */
+    max-width: 400px; /* Limits the width on larger screens */
+    height: auto; /* Adjusts height based on content */
     display: flex;
     flex-direction: column;
-    align-items: initial;
+    align-items: flex-start; /* Align items at the start */
     background-color: #EA4135;
-    padding: 0vw 1.5vw 1.5vw;
+    padding: 2vw; /* Uniform padding */
     border-radius: 10px;
     color: #F5F5F5;
-    font-size: 1.3vw;
+    font-size: 1.3vw; /* Font size scales with width */
 }
 
 .register_card {
@@ -125,8 +127,12 @@ textarea {
 }
 
 .username_label {
-    margin-top: 4.5vw;
-    font-size: 1.3vw;
+    margin-top: 2vw;
+    font-size: clamp(0.8rem, 2vw, 1.5rem); /* Makes the font size responsive */
+}
+
+.password_label {
+    font-size: clamp(0.8rem, 2vw, 1.5rem); /* Makes the font size responsive */
 }
 
 .registerlink {
@@ -158,4 +164,70 @@ textarea {
 
 img {
     transform: scale(0.7); /* Scales image down to 50% of its original size */
+}
+
+/* Input Fields Styling */
+    .log_in_card input {
+      width: 90%; /* Makes inputs take full width of their container */
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    /* Responsive Typography */
+    .log_in_card h1 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    /* Button Styling */
+    .log_in_card button {
+      align-self: center;
+      margin-top: 3vw;
+      width: 90%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: clamp(0.6rem, 1.5vw, 1.2rem); /* Makes the font size responsive */
+      cursor: pointer;
+    }
+
+    .log_in_card button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+        .log_in_card {
+            margin: 20px;
+            padding: 15px;
+        }
+
+        .log_in_card input {
+            font-size: 0.9rem;
+        }
+
+        .log_in_card button {
+            font-size: 0.9rem;
+        }
+    }
+
+#feedback {
+    position: relative;
+    color: #ffdc25;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.registerlink {
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: center;  /* Horizontal alignment */
+    align-items: center;     /* Vertical alignment */
+    text-align: center;      /* Centers inline text content */
 }

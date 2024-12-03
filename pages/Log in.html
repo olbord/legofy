@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <title>Log in</title> <!-- Veebilehe pealkiri, mida näidatakse brauseri tab-is -->
     <link rel="stylesheet" href="../styles/main.css"> <!-- Ühendus üldise css ja meie lehe vahel -->
-    <!-- Ühendus lehekülje css ja meie lehe vahel -->
+    <!-- Impordib Firebase-i projekti -->
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js"></script>
 </head>
 <body>
-
 <!-- Navigatsioonirida, millega navigeeritakse lehekülgede vahel -->
 
 <div id="navbar">
     <ul>
         <li><a class="nav-bar" href="index.html"> Home </a></li>
-        <li style="float: right"><a class="nav-bar" href="Log%20in.html"> Log in </a></li>
-
+        <li id="signout_button" style="float: right; display: none"><a class="nav-bar"> Log out </a></li>
+        <li id="signin_link" style="float: right"><a class="nav-bar" href="Log%20in.html"> Log in </a></li>
         <li style="float: right"><a class="nav-bar" href="my_collection.html"> My Collection </a></li>
         <li style="float: right"><a class="nav-bar" href="About%20Us.html"> About Us </a></li>
     </ul>
@@ -23,13 +24,14 @@
 <div class="container">
 
     <div class="log_in_card">
-        <label class="username_label"> Username
-            <textarea name="username_textarea"> </textarea>
+        <h1 id="feedback" style="display: none"></h1>
+        <label class="username_label"> Email
+            <input id='username_textarea'> </input>
         </label>
-        <label> Password
-            <textarea name="password_textarea"> </textarea>
+        <label class="password_label"> Password
+            <input id="password_textarea" type="password"> </input>
         </label>
-        <button class="signin"> Log in</button>
+        <button id="signin">Sign In</button>
         <p style="align-self: center"><a class="registerlink" href="register_page.html"> Don't have an account? Register here!</a></p>
 
     </div>
@@ -37,32 +39,7 @@
 <div class="container">
 
 </div>
-<script src="../scripts/login_token.js"></script>
-<script>
-    // Lehe funktsionaalsuse lisamiseks lisame sellise javascripti koodi.
-
-    // Tiimiliikme kaardile klikkimisel avaneb uus vaade
-
-    const cards = document.querySelectorAll('.card'); // kogume kokku kõik elemendid, mille klass on card
-
-    // iga kaardi kohta lisame funktsionaalsuse
-    cards.forEach(function (card) {
-
-        // kui vajutame kaardile, siis näitame uut vaadet
-        card.addEventListener('click', function () {
-            card.classList.add('active');
-        });
-
-        // Uue vaate kinni panemise funktsionaalsus
-        const closeButton = card.querySelector('.close-icon');
-        if (closeButton) {
-            closeButton.addEventListener('click', function (event) {
-                event.stopPropagation();
-                card.classList.remove('active');
-            });
-        }
-    });
-
-</script>
+<script type="module" src="/scripts/signin.js"></script>
+<script type="module" src="/scripts/signout.js"></script>
 </body>
 </html>

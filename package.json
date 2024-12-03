@@ -1,0 +1,16 @@
+{
+  "name": "veebilehe-projekt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@firebase/app": "^0.10.16",
+    "firebase": "^8.10.1"
+  }
+}
