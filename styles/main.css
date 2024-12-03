@@ -124,6 +124,7 @@ textarea {
     text-align: left;
     line-height: 2.5;
     resize: none;
+    font-size: 1vw;
 }
 
 .username_label {
