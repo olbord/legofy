@@ -47,6 +47,7 @@
     margin-right: 40px;
     font-family: 'tavatekst', sans-serif;
 }
+
 img {
     max-width: 70%;
     height: 50vw;
@@ -89,6 +90,7 @@ main{
     align-self: flex-start; /* Element joondub vasakule */
     width: 100%;
 }
+
 li {
     float: left;
 }

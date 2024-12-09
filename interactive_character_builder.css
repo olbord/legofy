@@ -10,6 +10,56 @@ html {
     src: url('fonts/pealkirjad/RoladeItalic-Black.ttf');
 }
 
+@font-face {
+    font-family: 'pealkirjad';
+    src: url('fonts/pealkirjad/RoladeItalic-Black.woff2') format('woff2'), /* Modern browsers */
+         url('fonts/pealkirjad/RoladeItalic-Black.woff') format('woff'),   /* Fallback for older browsers */
+         url('fonts/pealkirjad/RoladeItalic-Black.ttf') format('truetype'); /* Optional, for older browsers */
+    font-weight: normal;  /* Or specify weight if there are multiple versions */
+    font-style: normal;   /* Specify style if italic versions are available */
+}
+
+@font-face {
+    font-family: 'tavatekst';
+    src: url('fonts/tavatekst/RoladeItalic-Bold.woff2') format('woff2'), /* Modern browsers */
+         url('fonts/tavatekst/RoladeItalic-Bold.woff') format('woff'),   /* Fallback for older browsers */
+         url('fonts/tavatekst/RoladeItalic-Bold.ttf') format('truetype'); /* Optional, for older browsers */
+    font-weight: normal;  /* Or specify weight if there are multiple versions */
+    font-style: normal;   /* Specify style if italic versions are available */
+}
+
+li {
+    float: left;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2675FF;
+}
+
+li a {
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 1vw 2vw;
+    text-decoration: overline underline;
+}
+
+li a:hover {
+    background-color: #4f4747;
+    cursor: pointer;
+}
+
+#navbar {
+    align-self: flex-start;
+    gap: 0.5vw;
+    font-family: 'tavatekst', sans-serif;
+    padding: 1vw;
+}
+
 body {
     background-color: #FFDC25;
     min-height: 100vh;
@@ -26,9 +76,9 @@ body {
 }
 
 .preview {
-    width: 100%;
+    width: 300px;
     max-width: 400px;
-    height: 400px;
+    height: 300px;
     border: 20px solid #EA4135;
     margin-bottom: 20px;
     border-radius: 70px;
@@ -53,13 +103,13 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 10px 0;
-    gap: 10px;
+    margin: 5px;
+    gap: 5px;
 }
 
 .gallery img {
-    width: 120px;
-    height: 120px;
+    width: 70px;
+    height: 70px;
     margin: 10px;
     border: 2px solid transparent;
     cursor: pointer;
