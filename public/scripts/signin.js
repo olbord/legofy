@@ -19,26 +19,29 @@ const app = initializeApp(firebaseConfig)
 document.getElementById("signin").addEventListener("click", handleLogIn);
 
 function handleLogIn() {
-
     const email = document.getElementById("username_textarea").value;
     const password = document.getElementById("password_textarea").value;
-
     const feedback = document.getElementById("feedback");
 
-    // Ühendame Firebase'i auth keskkonnaga
+    // Connect to Firebase Auth
     const auth = getAuth();
 
-    // Logime sisse emaili ja parooliga
+    // Log in with email and password
     signInWithEmailAndPassword(auth, email, password)
-        // Kasutaja on sisse logitud
-        .then(() => {
-            // Navigeerime indexile
-            window.location.href = "index.html";
+        .then((userCredential) => {
+            const user = userCredential.user;
+
+            // Retrieve and store the ID token in localStorage
+            return user.getIdToken();
         })
-        // Kui kasutaja sisse logimisel tekib viga
+        .then((idToken) => {
+            localStorage.setItem('idToken', idToken); // Save the token in localStorage
+            console.log("ID Token generated and saved:", idToken);
+            window.location.href = "index.html"; // Redirect to homepage after successful login
+        })
         .catch((error) => {
             feedback.style.display = "block";
-            feedback.innerHTML = error.message
+            feedback.innerHTML = error.message;
+            console.error("Error during login:", error);
         });
-
 }

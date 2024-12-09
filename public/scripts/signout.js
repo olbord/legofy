@@ -30,6 +30,9 @@ function handleLogOut() {
             // Clear feedback and welcome message
             document.getElementById("feedback").innerHTML = "";
             document.getElementById("welcome_message").innerHTML = "";
+
+            // Remove idToken from localStorage
+            localStorage.removeItem('idToken'); // This will delete the token from localStorage
         })
         .catch((error) => {
             // Handle any errors during logout

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../styles/interactive_character_builder.css">
+    <title>Interactive Character Builder</title>
+</head>
+<body>
+    <div class="container">
+        <div class="preview" id="preview">
+            <img id="bottomImage" src="" alt="" />
+            <img id="topImage" src="" alt="" />
+            <img id="faceImage" src="" alt="" />
+            <img id="hairImage" src="" alt="" />
+        </div>
+
+        <div class="gallery" id="gallery"></div>
+
+        <div class="navigation">
+            <button id="prevBtn" onclick="navigatePage(-1)" disabled>← Back</button>
+            <button id="nextBtn" onclick="navigatePage(1)" disabled>Next →</button>
+            <button id="saveBtn" onclick="saveCharacter()" style="display: none;">Save</button>
+        </div>
+    </div>
+  <!-- Load Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js"></script>
+
+  <!-- Your custom JS files that use Firebase -->
+  <script type="module" src="/scripts/characterBuilderUI.js"></script>
+</body>
+</html>

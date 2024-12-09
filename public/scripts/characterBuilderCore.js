@@ -1,0 +1,105 @@
+
+const pages = [
+    {
+    type: "hair",
+    options: [
+        { value: "blackMedium", gallerySrc: "/legoIcons/hair/female/blackMedium.jpg", previewSrc: "/legoParts/hair/female/blackMedium.png" },
+        { value: "blackShort", gallerySrc: "/legoIcons/hair/female/blackShort.jpg", previewSrc: "/legoParts/hair/female/blackShort.png" },
+        { value: "blondeLong", gallerySrc: "/legoIcons/hair/female/blondeLong.jpg", previewSrc: "/legoParts/hair/female/blondeLong.png" },
+        { value: "blondeShort", gallerySrc: "/legoIcons/hair/female/blondeShort.jpg", previewSrc: "/legoParts/hair/female/blondeShort.png" },
+        { value: "brownBun", gallerySrc: "/legoIcons/hair/female/brownBun.jpg", previewSrc: "/legoParts/hair/female/brownBun.png" },
+        { value: "brownLong", gallerySrc: "/legoIcons/hair/female/brownLong.jpg", previewSrc: "/legoParts/hair/female/brownLong.png" },
+        { value: "blackWavy", gallerySrc: "/legoIcons/hair/male/blackWavy.jpg", previewSrc: "/legoParts/hair/male/blackWavy.png" },
+        { value: "maleBlondeShort", gallerySrc: "/legoIcons/hair/male/blondeShort.jpg", previewSrc: "/legoParts/hair/male/blondeShort.png" },
+        { value: "brownSpiky", gallerySrc: "/legoIcons/hair/male/brownSpiky.jpg", previewSrc: "/legoParts/hair/male/brownSpiky.png" },
+        { value: "brownStraight", gallerySrc: "/legoIcons/hair/male/brownStraight.jpg", previewSrc: "/legoParts/hair/male/brownStraight.png" },
+        { value: "brownStyled", gallerySrc: "/legoIcons/hair/male/brownStyled.jpg", previewSrc: "/legoParts/hair/male/brownStyled.png" },
+        { value: "brownWavy", gallerySrc: "/legoIcons/hair/male/brownWavy.jpg", previewSrc: "/legoParts/hair/male/brownWavy.png" }
+    ]
+},
+{
+    type: "face",
+    options: [
+        { value: "femaleSmirk", gallerySrc: "/legoIcons/face/1face.jpg", previewSrc: "/legoParts/face/1face.png" },
+        { value: "maleSmileSunglasses", gallerySrc: "/legoIcons/face/2face.jpg", previewSrc: "/legoParts/face/2face.png" },
+        { value: "femaleSmileFreckles", gallerySrc: "/legoIcons/face/3face.jpg", previewSrc: "/legoParts/face/3face.png" },
+        { value: "femaleSmirkSunglasses", gallerySrc: "/legoIcons/face/4face.jpg", previewSrc: "/legoParts/face/4face.png" },
+        { value: "maleOldSmileBeard", gallerySrc: "/legoIcons/face/5face.jpg", previewSrc: "/legoParts/face/5face.png" },
+        { value: "maleThoughtful", gallerySrc: "/legoIcons/face/6face.jpg", previewSrc: "/legoParts/face/6face.png" },
+        { value: "femaleSimper", gallerySrc: "/legoIcons/face/7face.jpg", previewSrc: "/legoParts/face/7face.png" },
+        { value: "maleAngry", gallerySrc: "/legoIcons/face/8face.jpg", previewSrc: "/legoParts/face/8face.png" },
+        { value: "femaleNeutral", gallerySrc: "/legoIcons/face/9face.jpg", previewSrc: "/legoParts/face/9face.png" },
+        { value: "maleSmileBeard", gallerySrc: "/legoIcons/face/10face.jpg", previewSrc: "/legoParts/face/10face.png" },
+        { value: "maleSmileFreckles", gallerySrc: "/legoIcons/face/11face.jpg", previewSrc: "/legoParts/face/11face.png" }
+    ]
+},
+{
+    type: "top",
+    options: [
+        { value: "beigeHawaii", gallerySrc: "/legoIcons/top/beigeHawaii.jpg", previewSrc: "/legoParts/top/beigeHawaii.png" },
+        { value: "blueSuit", gallerySrc: "/legoIcons/top/blueSuit.jpg", previewSrc: "/legoParts/top/blueSuit.png" },
+        { value: "blueSweater", gallerySrc: "/legoIcons/top/blueSweater.jpg", previewSrc: "/legoParts/top/blueSweater.png" },
+        { value: "brownJacket", gallerySrc: "/legoIcons/top/brownJacket.jpg", previewSrc: "/legoParts/top/brownJacket.png" },
+        { value: "brownSweater", gallerySrc: "/legoIcons/top/brownSweater.jpg", previewSrc: "/legoParts/top/brownSweater.png" },
+        { value: "greenCasual", gallerySrc: "/legoIcons/top/greenCasual.jpg", previewSrc: "/legoParts/top/greenCasual.png" },
+        { value: "greenCozy", gallerySrc: "/legoIcons/top/greenCozy.jpg", previewSrc: "/legoParts/top/greenCozy.png" },
+        { value: "greyCasual", gallerySrc: "/legoIcons/top/greyCasual.jpg", previewSrc: "/legoParts/top/greyCasual.png" },
+        { value: "lightGreen", gallerySrc: "/legoIcons/top/lightGreen.jpg", previewSrc: "/legoParts/top/lightGreen.png" },
+        { value: "redBoy", gallerySrc: "/legoIcons/top/redBoy.jpg", previewSrc: "/legoParts/top/redBoy.png" },
+        { value: "redGirl", gallerySrc: "/legoIcons/top/redGirl.jpg", previewSrc: "/legoParts/top/redGirl.png" },
+        { value: "whiteColorful", gallerySrc: "/legoIcons/top/whiteColorful.jpg", previewSrc: "/legoParts/top/whiteColorful.png" }
+    ]
+},
+{
+    type: "bottom",
+    options: [
+        { value: "whitePants", gallerySrc: "/legoIcons/bottom/1pants.jpg", previewSrc: "/legoParts/bottom/1pants.png" },
+        { value: "blackSkirt", gallerySrc: "/legoIcons/bottom/2pants.jpg", previewSrc: "/legoParts/bottom/2pants.png" },
+        { value: "piratePants", gallerySrc: "/legoIcons/bottom/3pants.jpg", previewSrc: "/legoParts/bottom/3pants.png" },
+        { value: "blackPants", gallerySrc: "/legoIcons/bottom/4pants.jpg", previewSrc: "/legoParts/bottom/4pants.png" },
+        { value: "lightBluePants", gallerySrc: "/legoIcons/bottom/5pants.jpg", previewSrc: "/legoParts/bottom/5pants.png" },
+        { value: "bluePants", gallerySrc: "/legoIcons/bottom/6pants.jpg", previewSrc: "/legoParts/bottom/6pants.png" },
+        { value: "whiteJeans", gallerySrc: "/legoIcons/bottom/7pants.jpg", previewSrc: "/legoParts/bottom/7pants.png" },
+        { value: "beigePants", gallerySrc: "/legoIcons/bottom/8pants.jpg", previewSrc: "/legoParts/bottom/8pants.png" },
+        { value: "redPants", gallerySrc: "/legoIcons/bottom/9pants.jpg", previewSrc: "/legoParts/bottom/9pants.png" },
+        { value: "beigeJeans", gallerySrc: "/legoIcons/bottom/10pants.jpg", previewSrc: "/legoParts/bottom/10pants.png" }
+    ]
+}
+
+];
+let currentPage = 0;
+const selectedOptions = { hair: null, face: null, top: null, bottom: null };
+
+// Function to get the current page options
+function getPageOptions() {
+    return { index: currentPage, page: pages[currentPage] };
+}
+
+// Function to select an option
+function selectOption(type, value, src) {
+    selectedOptions[type] = { value, src };
+}
+
+// Function to navigate between pages
+function navigatePage(direction) {
+    if (direction === 1 && !selectedOptions[pages[currentPage].type]) {
+        throw new Error("Please make a selection before proceeding.");
+    }
+    currentPage += direction;
+    if (currentPage < 0 || currentPage >= pages.length) {
+        throw new Error("Invalid page navigation.");
+    }
+}
+
+// Function to get the selected options
+function getSelectedOptions() {
+    return selectedOptions;
+}
+
+// Function to check if all selections are made
+function isCharacterComplete() {
+    return pages.every(page => selectedOptions[page.type]);
+}
+
+// Export the functions
+export { pages, getPageOptions, selectOption, navigatePage, getSelectedOptions, isCharacterComplete };
