@@ -7,6 +7,17 @@
     <title>Interactive Character Builder</title>
 </head>
 <body>
+
+    <div id="navbar">
+        <ul>
+            <li><a class="nav-bar" href="index.html"> Home </a></li>
+            <li id="signout_button" style="float: right; display: none"><a class="nav-bar"> Log out </a></li>
+            <li id="signin_link" style="float: right"><a class="nav-bar" href="Log%20in.html"> Log in </a></li>
+            <li style="float: right"><a class="nav-bar" href="my_collection.html"> My Collection </a></li>
+            <li style="float: right"><a class="nav-bar" href="About%20Us.html"> About Us </a></li>
+        </ul>
+    </div>
+
     <div class="container">
         <div class="preview" id="preview">
             <img id="bottomImage" src="" alt="" />
@@ -20,7 +31,13 @@
         <div class="navigation">
             <button id="prevBtn" onclick="navigatePage(-1)" disabled>← Back</button>
             <button id="nextBtn" onclick="navigatePage(1)" disabled>Next →</button>
-            <button id="saveBtn" onclick="saveCharacter()" style="display: none;">Save</button>
+            <button id="saveBtn" onclick="showNameInput()" style="display: none;">Save</button>
+        </div>
+
+        <div id="nameInputContainer" style="display: none; text-align: center; margin-top: 10px;">
+            <label for="characterName" style="font-size: 16px;">Enter character name:</label>
+            <input type="text" id="characterName" placeholder="Name (English only)" style="margin-left: 10px;"/>
+            <button onclick="saveCharacter()" style="margin-left: 10px;">Confirm Save</button>
         </div>
     </div>
   <!-- Load Firebase SDKs -->

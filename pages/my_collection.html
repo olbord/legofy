@@ -1,0 +1,55 @@
+
+<p id="title_collection">
+    My Collection
+</p>
+
+<div class="row" id="collectionContainer">
+
+</div>
+
+<script>
+    function loadCollection() {
+        const container = document.getElementById('collectionContainer');
+        const savedCharacters = JSON.parse(localStorage.getItem('characters')) || [];
+
+        if (savedCharacters.length === 0) {
+            container.innerHTML = "<p>No characters in your collection yet!</p>";
+            return;
+        }
+
+        savedCharacters.forEach(character => {
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            const characterImage = document.createElement('div');
+            characterImage.classList.add('character-preview');
+            characterImage.style.position = 'relative';
+            characterImage.style.width = '100px';
+            characterImage.style.height = '150px';
+
+            ['bottom', 'top', 'face', 'hair'].forEach(layer => {
+                if (character.options[layer]) {
+                    const img = document.createElement('img');
+                    img.src = character.options[layer].src;
+                    img.style.position = 'absolute';
+                    img.style.width = '100%';
+                    img.style.height = '100%';
+                    img.style.objectFit = 'contain';
+                    characterImage.appendChild(img);
+                }
+            });
+
+            const name = document.createElement('p');
+            name.style.alignSelf = 'center';
+            name.textContent = character.name;
+
+            card.appendChild(characterImage);
+            card.appendChild(name);
+            container.appendChild(card);
+        });
+    }
+
+    loadCollection();
+</script>
+</body>
+</html>

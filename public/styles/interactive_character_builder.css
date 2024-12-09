@@ -12,18 +12,18 @@ html {
 
 @font-face {
     font-family: 'pealkirjad';
-    src: url('fonts/pealkirjad/RoladeItalic-Black.woff2') format('woff2'), /* Modern browsers */
-         url('fonts/pealkirjad/RoladeItalic-Black.woff') format('woff'),   /* Fallback for older browsers */
-         url('fonts/pealkirjad/RoladeItalic-Black.ttf') format('truetype'); /* Optional, for older browsers */
+    src: url('../fonts/pealkirjad/RoladeItalic-Black.woff2') format('woff2'), /* Modern browsers */
+         url('../fonts/pealkirjad/RoladeItalic-Black.woff') format('woff'),   /* Fallback for older browsers */
+         url('../fonts/pealkirjad/RoladeItalic-Black.ttf') format('truetype'); /* Optional, for older browsers */
     font-weight: normal;  /* Or specify weight if there are multiple versions */
     font-style: normal;   /* Specify style if italic versions are available */
 }
 
 @font-face {
     font-family: 'tavatekst';
-    src: url('fonts/tavatekst/RoladeItalic-Bold.woff2') format('woff2'), /* Modern browsers */
-         url('fonts/tavatekst/RoladeItalic-Bold.woff') format('woff'),   /* Fallback for older browsers */
-         url('fonts/tavatekst/RoladeItalic-Bold.ttf') format('truetype'); /* Optional, for older browsers */
+    src: url('../fonts/tavatekst/RoladeItalic-Bold.woff2') format('woff2'), /* Modern browsers */
+         url('../fonts/tavatekst/RoladeItalic-Bold.woff') format('woff'),   /* Fallback for older browsers */
+         url('../fonts/tavatekst/RoladeItalic-Bold.ttf') format('truetype'); /* Optional, for older browsers */
     font-weight: normal;  /* Or specify weight if there are multiple versions */
     font-style: normal;   /* Specify style if italic versions are available */
 }
