@@ -31,7 +31,13 @@
         <div class="navigation">
             <button id="prevBtn" onclick="navigatePage(-1)" disabled>← Back</button>
             <button id="nextBtn" onclick="navigatePage(1)" disabled>Next →</button>
-            <button id="saveBtn" onclick="saveCharacter()" style="display: none;">Save</button>
+            <button id="saveBtn" onclick="showNameInput()" style="display: none;">Save</button>
+        </div>
+
+        <div id="nameInputContainer" style="display: none; text-align: center; margin-top: 10px;">
+            <label for="characterName" style="font-size: 16px;">Enter character name:</label>
+            <input type="text" id="characterName" placeholder="Name (English only)" style="margin-left: 10px;"/>
+            <button onclick="saveCharacter()" style="margin-left: 10px;">Confirm Save</button>
         </div>
     </div>
 
@@ -121,14 +127,8 @@
             });
 
             const prevBtn = document.getElementById("prevBtn");
+            prevBtn.style.visibility = currentPage === 0 ? "hidden" : "visible";
 
-            if (currentPage === 0) {
-              prevBtn.style.visibility = "hidden";  // Hide the "Previous" button
-            } else {
-                prevBtn.style.visibility = "visible";
-              prevBtn.style.display = "inline";// Show the "Previous" button
-              prevBtn.disabled = false;  // Ensure the "Previous" button is enabled
-            }
             document.getElementById("nextBtn").disabled = !selectedOptions[page.type];
             document.getElementById("nextBtn").style.display = currentPage === pages.length - 1 ? "none" : "inline";
             document.getElementById("saveBtn").style.display = currentPage === pages.length - 1 ? "inline" : "none";
@@ -152,15 +152,34 @@
             loadPage();
         }
 
+        function showNameInput() {
+            document.getElementById("nameInputContainer").style.display = "block";
+            document.getElementById("saveBtn").style.display = "none";
+        }
+
         function saveCharacter() {
+            const nameInput = document.getElementById("characterName").value.trim();
+            if (!nameInput || !/^[a-zA-Z]+$/.test(nameInput)) {
+                alert("Please enter a valid name (English letters only).");
+                return;
+            }
+
             for (const page of pages) {
                 if (!selectedOptions[page.type]) {
                     alert(`Please select an option for ${page.type} before saving.`);
                     return;
                 }
             }
-            localStorage.setItem("character", JSON.stringify(selectedOptions));
-            alert("Character saved!");
+
+            const characterData = {
+                name: nameInput,
+                parts: selectedOptions
+            };
+            const savedCharacters = JSON.parse(localStorage.getItem("characters") || "[]");
+            savedCharacters.push(characterData);
+            localStorage.setItem("characters", JSON.stringify(savedCharacters));
+
+            alert(`Character "${nameInput}" saved!`);
             window.location.href = 'pages/my_collection.html';
         }
 

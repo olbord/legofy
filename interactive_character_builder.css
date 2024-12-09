@@ -180,3 +180,36 @@ button:disabled {
         padding: 15px 30px;
     }
 }
+
+#nameInputContainer label {
+    font-size: 30px;
+    font-family: RoladeItalic-Black;
+    color: #FF6347;
+    margin-bottom: 10px;
+    display: block;
+}
+
+
+#nameInputContainer input {
+    padding: 10px;
+    font-size: 20px;
+    width: 300px;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+#nameInputContainer button {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #2675FF;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#nameInputContainer button:hover {
+    background-color: #d0342b;
+}
