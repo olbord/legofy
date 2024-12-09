@@ -7,6 +7,17 @@
     <title>Interactive Character Builder</title>
 </head>
 <body>
+
+    <div id="navbar">
+        <ul>
+            <li><a class="nav-bar" href="pages/index.html"> Home </a></li>
+            <li id="signout_button" style="float: right; display: none"><a class="nav-bar"> Log out </a></li>
+            <li id="signin_link" style="float: right"><a class="nav-bar" href="pages/Log%20in.html"> Log in </a></li>
+            <li style="float: right"><a class="nav-bar" href="pages/my_collection.html"> My Collection </a></li>
+            <li style="float: right"><a class="nav-bar" href="pages/About%20Us.html"> About Us </a></li>
+        </ul>
+    </div>
+
     <div class="container">
         <div class="preview" id="preview">
             <img id="bottomImage" src="" alt="" />
@@ -109,7 +120,15 @@
                 gallery.appendChild(img);
             });
 
-            document.getElementById("prevBtn").disabled = currentPage === 0;
+            const prevBtn = document.getElementById("prevBtn");
+
+            if (currentPage === 0) {
+              prevBtn.style.visibility = "hidden";  // Hide the "Previous" button
+            } else {
+                prevBtn.style.visibility = "visible";
+              prevBtn.style.display = "inline";// Show the "Previous" button
+              prevBtn.disabled = false;  // Ensure the "Previous" button is enabled
+            }
             document.getElementById("nextBtn").disabled = !selectedOptions[page.type];
             document.getElementById("nextBtn").style.display = currentPage === pages.length - 1 ? "none" : "inline";
             document.getElementById("saveBtn").style.display = currentPage === pages.length - 1 ? "inline" : "none";
@@ -140,13 +159,14 @@
                     return;
                 }
             }
-
             localStorage.setItem("character", JSON.stringify(selectedOptions));
             alert("Character saved!");
-            window.location.href = "myCollection.html";
+            window.location.href = 'pages/my_collection.html';
         }
 
         loadPage();
     </script>
+
+
 </body>
 </html>
