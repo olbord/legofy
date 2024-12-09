@@ -1,42 +1,93 @@
-import sharp from "sharp";
+import sharp from 'sharp';
+import admin from 'firebase-admin';
+import { Storage } from '@google-cloud/storage';
+import fs from 'fs';
 import path from "path";
-import multer from "multer";
-import { fileURLToPath } from 'url';
 
+// Load GCS credentials
+const gcsServiceAccount = JSON.parse(fs.readFileSync('keys/GCSkey.json', 'utf8'));
 
-// Resolve __dirname equivalent for ES modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// Initialize Google Cloud Storage client
+const storage = new Storage({ credentials: gcsServiceAccount });
+const bucket = storage.bucket('legofy'); // Your GCS bucket name
 
-// Reference the 'public' directory relative to the current file
-const publicDir = path.resolve(__dirname, '../public');
+// Initialize Firebase Admin SDK
+const firebaseServiceAccount = JSON.parse(fs.readFileSync('keys/FIREBASEkey.json', 'utf8'));
+admin.initializeApp({
+  credential: admin.credential.cert(firebaseServiceAccount),
+});
 
-// Define the upload directory path
-const uploadDir = path.join(__dirname, 'uploads');
+// Define the public directory path relative to the current file
+const publicDirectory = path.resolve('../public');
 
-// Multer setup to store files temporarily in backend/uploads/
-const upload = multer({ dest: uploadDir });
+// Function to stack images and return the resulting image buffer
+async function stackImages(character) {
+  try {
+    // Construct absolute paths for each image part
+    const images = [
+      path.join(publicDirectory, character.bottom.src),
+      path.join(publicDirectory, character.top.src),
+      path.join(publicDirectory, character.face.src),
+      path.join(publicDirectory, character.hair.src),
+    ];
 
-const stackImages = async (imagePaths) => {
-    try {
-        let stackedImage = sharp(imagePaths[0]);
-
-        for (let i = 1; i < imagePaths.length; i++) {
-            stackedImage = stackedImage.composite([{
-                input: imagePaths[i],
-                blend: 'over',
-            }]);
-        }
-
-        // Specify the temporary image path
-        const tempImagePath = path.join(uploadDir, 'stacked_character.png');
-        await stackedImage.toFile(tempImagePath);
-
-        return tempImagePath;
-    } catch (error) {
-        console.error('Error stacking images:', error);
-        throw error;
+    // Validate that all files exist before processing
+    for (const imagePath of images) {
+      if (!fs.existsSync(imagePath)) {
+        throw new Error(`Input file is missing: ${imagePath}`);
+      }
     }
-};
 
-export {upload, stackImages}
+    // Start with the first image
+    let stackedImage = sharp(images[0]);
+
+    // Stack the rest of the images
+    for (let i = 1; i < images.length; i++) {
+      stackedImage = stackedImage.composite([{ input: images[i], gravity: 'north' }]);
+    }
+
+    // Output the stacked image as a PNG and return the buffer
+    return await stackedImage.toBuffer();
+  } catch (error) {
+    console.error('Error stacking images:', error);
+    throw error;
+  }
+}
+
+// Function to upload the image to Google Cloud Storage
+async function uploadImageToGCS(buffer, userEmail) {
+  try {
+    // Define the destination path in the GCS bucket (using the user's email)
+    const filePath = `users/${userEmail}/character_image.png`;
+
+    const file = bucket.file(filePath);
+
+    // Upload the buffer to GCS
+    await file.save(buffer, {
+      metadata: { contentType: 'image/png' },
+    });
+
+    // Make the file publicly accessible (optional)
+    await file.makePublic();
+
+    console.log(`File uploaded to ${filePath}`);
+    return filePath; // Return the file path to the caller
+  } catch (error) {
+    console.error('Error uploading file to GCS:', error);
+    throw new Error('Error uploading file to GCS');
+  }
+}
+
+// Function to verify the Firebase ID token and get the user's email
+async function verifyIdToken(idToken) {
+  try {
+    const decodedToken = await admin.auth().verifyIdToken(idToken);
+    return decodedToken.email;
+  } catch (error) {
+    console.error('Error verifying ID token:', error);
+    throw new Error('Error verifying ID token');
+  }
+}
+
+// Exporting the functions to be used in other parts of the backend
+export { stackImages, uploadImageToGCS, verifyIdToken };
