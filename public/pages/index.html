@@ -33,14 +33,14 @@
 <div id="root"></div>
     <button id="create-button"
         style="color: yellow; font-family: 'pealkirjad', sans-serif; font-size: large"
-        onclick="navigateToTestPage()">CREATE NOW</button>
+        onclick="toBuilder()">CREATE NOW</button>
 
-<script>
-    // Function to navigate to test.html
-    function navigateToTestPage() {
-        window.location.href = '/pages/interactive_character_builder.html';
-    }
-</script>
+<script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js"></script>
+
+  <!-- Your custom JS files that use Firebase -->
+  <script type="module" src="/scripts/index.js"></script>
+
 </body>
 
 </html>
