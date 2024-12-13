@@ -39,7 +39,6 @@
 
 .container {
     display: flex;
-    align-items: center;
     font-size: 7vw;
 }
 
@@ -50,17 +49,16 @@
 
 img {
     max-width: 70%;
-    height: 50vw;
+    height: 40vw;
     margin-bottom: 50px;
 }
 
 main{
     background-color:#FFDC25;
-    min-height: 100vh;
 }
 
 .p1{
-    font-size: 54px;
+    font-size: 40px;
     color: white;
     font-family: RoladeItalic-Black;
     border:1px transparent;
@@ -74,12 +72,11 @@ main{
 }
 
 .p2{
-    font-size: 25px;
+    font-size: 19px;
     font-family: RoladeItalic-Black;
     border:1px transparent;
     border-radius: 30px;
     background-color: white;
-    margin-bottom: 100px;
     padding: 15px;
     margin-left: 40px;
     color:#2675FF;
