@@ -93,3 +93,25 @@ img {
     color: #EA4135;
     text-align: center;
     margin-top: 20px;
+}
+
+.mcolfooter{
+    margin-top: 50vh;
+}
+
+footer {
+    background-color: #2675FF;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 13vh;
+
+}
+
+.divfooter{
+    color: white;
+    margin-left:50px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+}
