@@ -16,10 +16,10 @@ const auth = getAuth(app);
 function toBuilder() {
     const user = auth.currentUser;
     if (user) {
-        window.location.href = 'interactive_character_builder.html';
+        window.location.href = '../pages/interactive_character_builder.html';
     } else {
         alert("You must be logged in to create a character. Please log in first.");
-        window.location.href = 'Log%20in.html';
+        window.location.href = '../pages/Log%20in.html';
     }
 }
 

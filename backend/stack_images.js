@@ -38,16 +38,17 @@ async function stackImages(character) {
       }
     }
 
-    // Start with the first image
-    let stackedImage = sharp(images[0]);
+    // Load the base image
+    let baseImage = sharp(images[0]);
 
-    // Stack the rest of the images
-    for (let i = 1; i < images.length; i++) {
-      stackedImage = stackedImage.composite([{ input: images[i], gravity: 'north' }]);
-    }
+    // Create an array of composites for all the remaining images
+    const composites = images.slice(1).map(imagePath => ({
+      input: imagePath,
+      gravity: 'north', // Adjust gravity as per your requirement
+    }));
 
-    // Output the stacked image as a PNG and return the buffer
-    return await stackedImage.toBuffer();
+    // Apply the composites to the base image and return the resulting buffer
+    return baseImage.composite(composites).toBuffer();
   } catch (error) {
     console.error('Error stacking images:', error);
     throw error;
@@ -68,7 +69,6 @@ async function uploadImageToGCS(buffer, userEmail) {
     });
 
     // Make the file publicly accessible (optional)
-    await file.makePublic();
 
     console.log(`File uploaded to ${filePath}`);
     return filePath; // Return the file path to the caller

@@ -95,6 +95,14 @@ img {
     margin-top: 20px;
 }
 
+#logout {
+    background-color: #EA4135;
+}
+
+#logout:hover {
+    background-color: #872720;
+}
+
 .mcolfooter{
     margin-top: 50vh;
 }

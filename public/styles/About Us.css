@@ -113,6 +113,13 @@ li a:hover {
     cursor: pointer;
 }
 
+#logout {
+    background-color: #EA4135;
+}
+
+#logout:hover {
+    background-color: #872720;
+}
 footer {
     background-color: #2675FF;
     width: 100%;
