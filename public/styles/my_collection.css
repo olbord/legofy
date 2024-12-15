@@ -93,3 +93,12 @@ img {
     color: #EA4135;
     text-align: center;
     margin-top: 20px;
+}
+
+#logout {
+    background-color: #EA4135;
+}
+
+#logout:hover {
+    background-color: #872720;
+}

@@ -213,3 +213,11 @@ button:disabled {
 #nameInputContainer button:hover {
     background-color: #d0342b;
 }
+
+#logout {
+    background-color: #EA4135;
+}
+
+#logout:hover {
+    background-color: #872720;
+}

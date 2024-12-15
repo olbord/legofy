@@ -69,6 +69,14 @@ li a:hover {
     cursor: pointer;
 }
 
+#logout {
+    background-color: #EA4135;
+}
+
+#logout:hover {
+    background-color: #872720;
+}
+
 #navbar {
     align-self: flex-start; /* Element joondub vasakule */
     width: 100%;

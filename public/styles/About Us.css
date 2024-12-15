@@ -115,3 +115,11 @@ li a:hover {
     background-color: #4f4747;
     cursor: pointer;
 }
+
+#logout {
+    background-color: #EA4135;
+}
+
+#logout:hover {
+    background-color: #872720;
+}

@@ -68,3 +68,11 @@ img.has-border {
 img:hover{
     filter: brightness(0.7);
 }
+
+#logout {
+    background-color: #EA4135;
+}
+
+#logout:hover {
+    background-color: #872720;
+}
