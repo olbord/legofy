@@ -45,7 +45,7 @@ onAuthStateChanged(auth, (user) => {
     });
     my_collection_link.innerHTML = `<a class="nav-bar" id="my_collection_link">My Collection</a>`;
     document.getElementById("my_collection_link").addEventListener("click", () => {
-      window.location.href = "my_collection.html";
+      window.location.href = "../pages/my_collection.html";
     });
   } else {
     console.log('not logged in')

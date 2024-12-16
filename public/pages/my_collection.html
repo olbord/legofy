@@ -6,82 +6,36 @@
     <title>My Collection</title>
 </head>
 <body>
+    <div id="navbar">
+        <ul>
+            <li><a class="nav-bar" href="/pages/index.html">Home</a></li>
+            <li id="signin_link" style="float: right"></li>
+            <li id="my_collection_link" style="float: right"></li>
+            <li style="float: right"><a class="nav-bar" href="/pages/About%20Us.html">About Us</a></li>
+        </ul>
+    </div>
 
-<div id="navbar">
-    <ul>
-        <li><a class="nav-bar" href="/pages/index.html"> Home </a></li>
-        <li id="signin_link" style="float: right"></li>
-        <li id="my_collection_link" style="float: right"></li>
-        <li style="float: right"><a class="nav-bar" href="/pages/About%20Us.html"> About Us </a></li>
-    </ul>
-</div>
+    <p id="title_collection">My Collection</p>
 
-<p id="title_collection">
-    My Collection
-</p>
+    <div class="row" id="collectionContainer"></div>
 
-<div class="row" id="collectionContainer">
-
-</div>
-
-<script>
-    function loadCollection() {
-        const container = document.getElementById('collectionContainer');
-        const savedCharacters = JSON.parse(localStorage.getItem('characters')) || [];
-
-        if (savedCharacters.length === 0) {
-            container.innerHTML = "<p>No characters in your collection yet!</p>";
-            return;
-        }
-
-        savedCharacters.forEach(character => {
-            const card = document.createElement('div');
-            card.classList.add('card');
-
-            const characterImage = document.createElement('div');
-            characterImage.classList.add('character-preview');
-            characterImage.style.position = 'relative';
-            characterImage.style.width = '100px';
-            characterImage.style.height = '150px';
-
-            ['bottom', 'top', 'face', 'hair'].forEach(layer => {
-                if (character.options[layer]) {
-                    const img = document.createElement('img');
-                    img.src = character.options[layer].src;
-                    img.style.position = 'absolute';
-                    img.style.width = '100%';
-                    img.style.height = '100%';
-                    img.style.objectFit = 'contain';
-                    characterImage.appendChild(img);
-                }
-            });
-
-            const name = document.createElement('p');
-            name.style.alignSelf = 'center';
-            name.textContent = character.name;
-
-            card.appendChild(characterImage);
-            card.appendChild(name);
-            container.appendChild(card);
-        });
-    }
-
-    loadCollection();
-</script>
-<script type="module" src="/scripts/button_visibility.js"></script>
-
+    <!-- Load the external JavaScript -->
+    <script type="module" src="/scripts/load_collection.js" defer></script>
+    <script type="module" src="/scripts/button_visibility.js" defer></script>
 </body>
 <footer class="mcolfooter">
     <div class="divfooter">
-        <ul style="display: flex;flex-direction: column;margin-top: 10px">
+        <ul style="display: flex; flex-direction: column; margin-top: 10px;">
             <a>Email: support@legofy.com</a>
             <a>Address: 123 Brick Lane, Blockville, USA</a>
             <a>Phone: +1 (800) 123-LEGO</a>
         </ul>
-        <p style="font-size: 25px">LEGOFY: Build Yourself, Brick by Brick!</p>
+        <p style="font-size: 25px;">LEGOFY: Build Yourself, Brick by Brick!</p>
         <ul>
-            <p>At LEGOFY, your privacy is important to us. This policy outlines how we collect, use,
-                <br>and protect your personal information when you use our platform to create your LEGO-inspired avatar.</p>
+            <p>
+                At LEGOFY, your privacy is important to us. This policy outlines how we collect, use,
+                <br>and protect your personal information when you use our platform to create your LEGO-inspired avatar.
+            </p>
         </ul>
     </div>
 </footer>

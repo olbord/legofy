@@ -55,11 +55,15 @@ async function stackImages(character) {
   }
 }
 
-// Function to upload the image to Google Cloud Storage
 async function uploadImageToGCS(buffer, userEmail) {
   try {
+    // Generate a unique filename with a timestamp
+    const timestamp = Date.now(); // Current timestamp in milliseconds
+    const uniqueFileName = `character_image_${timestamp}.png`;
+    // Alternatively, use UUID: const uniqueFileName = `character_image_${uuidv4()}.png`;
+
     // Define the destination path in the GCS bucket (using the user's email)
-    const filePath = `users/${userEmail}/character_image.png`;
+    const filePath = `users/${userEmail}/${uniqueFileName}`;
 
     const file = bucket.file(filePath);
 
@@ -78,6 +82,7 @@ async function uploadImageToGCS(buffer, userEmail) {
   }
 }
 
+
 // Function to verify the Firebase ID token and get the user's email
 async function verifyIdToken(idToken) {
   try {
@@ -90,4 +95,4 @@ async function verifyIdToken(idToken) {
 }
 
 // Exporting the functions to be used in other parts of the backend
-export { stackImages, uploadImageToGCS, verifyIdToken };
+export { stackImages, uploadImageToGCS, verifyIdToken, storage };
