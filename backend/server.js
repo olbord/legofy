@@ -1,7 +1,10 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
-import { stackImages, uploadImageToGCS, verifyIdToken } from './stack_images.js';
+import {stackImages, storage, uploadImageToGCS, verifyIdToken} from './stack_images.js';
+import { getUserImages } from './get_user_storage.js';
+import { getAuth } from 'firebase-admin/auth';  // Firebase Admin SDK
+import admin from 'firebase-admin';
 
 // Create an Express app
 const app = express();
@@ -48,8 +51,67 @@ app.get('/', (req, res) => {
   res.sendFile(indexPath);  // Serve index.html from 'public/pages/index.html'
 });
 
+// Middleware to verify the token and fetch images
+app.get('/api/user-images', async (req, res) => {
+  const authHeader = req.headers.authorization;
+
+  // Check for the presence of the Authorization header
+  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    return res.status(400).json({ error: 'Authorization header missing or invalid' });
+  }
+
+  const idToken = authHeader.split(' ')[1];  // Get token after "Bearer "
+
+  try {
+    // Verify the ID token using Firebase Admin SDK
+    const decodedToken = await admin.auth().verifyIdToken(idToken);
+    const email = decodedToken.email;
+
+    if (!email) {
+      return res.status(400).json({ error: 'User email not found in token' });
+    }
+
+    // Get the list of images from the user's folder in the bucket
+    const images = await getUserImagesFromBucket(email);
+    return res.json({ images });
+
+  } catch (error) {
+    console.error('Error verifying token or fetching images:', error);
+    return res.status(401).json({ error: 'Unauthorized or failed to fetch images' });
+  }
+});
+
+// Function to get images from the bucket for a given user
+async function getUserImagesFromBucket(email) {
+  const bucket = storage.bucket('legofy');
+  const userFolder = `users/${email}/`;  // Path for user's images
+
+  try {
+    const [files] = await bucket.getFiles({ prefix: userFolder }); // Get files from user's folder
+
+    if (!files.length) {
+      return [];
+    }
+
+    // Generate public URLs for each image
+    const imageUrls = files.map(file => {
+      // Make sure the image is publicly accessible
+      const publicUrl = file.publicUrl();
+      return publicUrl;
+    });
+
+    return imageUrls;
+  } catch (error) {
+    console.error('Error fetching images from bucket:', error);
+    return [];
+  }
+}
+
+
 // Start the Express server
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
+export default app
