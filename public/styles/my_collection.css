@@ -123,3 +123,11 @@ footer {
     justify-content: space-between;
     margin-right: 20px;
 }
+
+@media all and (max-width: 768px) {
+    .divfooter {
+        display: flex;
+        flex-direction: column;
+        font-size: 3vw;
+    }
+}
