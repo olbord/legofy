@@ -7,7 +7,6 @@ body {
     gap: 0.5vw; /* Vahe elementide vahel */
     align-items: center; /* Elemendid joondatakse horisontaalselt lehe keskele*/
     background-color: #FFDC25;
-    /* . viitame elemenditele, millel on selline class HTML-is on class="container" */
 }
 .container {
     display: flex;
@@ -121,21 +120,6 @@ li a:hover {
     font-size: 1.3vw;
 }
 
-textarea {
-    height: 3vw;
-    width: 25vw;
-    border-radius: 15px;
-    border: none;
-    margin-bottom: 1.2vw;
-    background-color: #F5F5F5;
-    margin-top: 0.3vw;
-    outline: none;
-    text-align: left;
-    line-height: 2.5;
-    resize: none;
-    font-size: 1vw;
-}
-
 .username_label {
     margin-top: 2vw;
     font-size: clamp(0.8rem, 2vw, 1.5rem); /* Makes the font size responsive */
@@ -178,13 +162,17 @@ img {
 
 /* Input Fields Styling */
     .log_in_card input {
-      width: 90%; /* Makes inputs take full width of their container */
+      width: 90%;
       padding: 10px;
       margin: 10px 0;
       border: 1px solid #ccc;
       border-radius: 5px;
       font-size: 1rem;
+        box-sizing: border-box;
+        height: 3vw; /* Explicitly sets the height to make both inputs the same height */
+    line-height: 2.5; /* Ensures text is vertically centered */
     }
+
 
     /* Responsive Typography */
     .log_in_card h1 {
@@ -210,21 +198,6 @@ img {
       background-color: #0056b3;
     }
 
-    /* Responsive Design */
-    @media (max-width: 600px) {
-        .log_in_card {
-            margin: 20px;
-            padding: 15px;
-        }
-
-        .log_in_card input {
-            font-size: 0.9rem;
-        }
-
-        .log_in_card button {
-            font-size: 0.9rem;
-        }
-    }
 
 #feedback {
     position: relative;
@@ -252,7 +225,6 @@ footer {
     display: flex;
     flex-direction: column;
     margin-top: 13vh;
-
 }
 
 .divfooter{
@@ -261,4 +233,62 @@ footer {
     display: flex;
     justify-content: space-between;
     margin-right: 20px;
+}
+
+@media all and (max-width: 768px) {
+    .log_in_card {
+    width: 50vw; /* Responsive width based on viewport width */
+    height: auto; /* Adjusts height based on content */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items at the start */
+    background-color: #EA4135;
+    padding: 2vw; /* Uniform padding */
+    border-radius: 10px;
+    color: #F5F5F5;
+    font-size: medium; /* Font size scales with width */
+}
+    .register_card {
+    width: 50vw; /* Responsive width based on viewport width */
+    height: auto; /* Adjusts height based on content */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items at the start */
+    background-color: #EA4135;
+    padding: 2vw; /* Uniform padding */
+    border-radius: 10px;
+    color: #F5F5F5;
+    font-size: 5vw; /* Font size scales with width */
+}
+    .registerlink {
+        font-size: 3.9vw;
+    }
+
+    .username_label {
+        font-size: 3.9vw;
+    }
+
+    .password_label {
+        font-size: 3.9vw;
+    }
+
+    .divfooter {
+        display: flex;
+        flex-direction: column;
+        font-size: 3vw;
+    }
+
+    .container img {
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        width: 80vw;
+        height: auto;
+        margin-top: 15vw;
+    }
+
+    button {
+        width: 40vw;
+        height: auto;
+    }
 }
