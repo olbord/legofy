@@ -47,7 +47,7 @@ export async function saveCharacter() {
     const data = await response.json();
     if (response.ok) {
       alert('Character saved successfully!');
-      window.location.href = 'myCollection.html';  // Redirect to another page
+      window.location.href = '../pages/my_collection.html';  // Redirect to another page
     } else {
       alert(`Error: ${data.error || 'Something went wrong.'}`);
     }

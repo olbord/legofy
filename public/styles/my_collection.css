@@ -104,7 +104,7 @@ img {
 }
 
 .mcolfooter{
-    margin-top: 50vh;
+    margin-top: 10vh;
 }
 
 footer {
@@ -113,7 +113,6 @@ footer {
     display: flex;
     flex-direction: column;
     margin-top: 13vh;
-
 }
 
 .divfooter{
